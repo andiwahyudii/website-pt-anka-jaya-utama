@@ -11,6 +11,7 @@ Kontak email resmi: `Anka.jayautama@gmail.com`.
 ```text
 .
 ├── index.html
+├── package.json
 ├── assets
 │   ├── brosur-pt-anka-jaya-utama.html
 │   ├── brosur-pt-anka-jaya-utama.pdf
@@ -22,7 +23,7 @@ Kontak email resmi: `Anka.jayautama@gmail.com`.
 │   ├── icons
 │   │   ├── apple-touch-icon.png
 │   │   └── favicon.png
-│   └── images
+│   ├── images
 │       ├── denah-unit-rumah.jpg
 │       ├── galeri-rumah-1.jpg
 │       ├── galeri-rumah-2.jpg
@@ -32,6 +33,19 @@ Kontak email resmi: `Anka.jayautama@gmail.com`.
 │       ├── logo-pt-anka-jaya-utama.png
 │       ├── poster-duta-kayong-permai.jpg
 │       └── siteplan-perumahan.png
+│   └── progress
+│       └── 2026-04-30
+│           ├── progress-01.jpg
+│           ├── progress-02.jpg
+│           ├── progress-03.jpg
+│           ├── progress-04.jpg
+│           ├── progress-05.jpg
+│           └── progress-06.jpg
+├── src
+│   └── data
+│       └── progress.js
+├── scripts
+│   └── validate-static-site.js
 ├── robots.txt
 ├── sitemap.xml
 ├── netlify.toml
@@ -46,17 +60,80 @@ Kontak email resmi: `Anka.jayautama@gmail.com`.
 - Tombol Google Maps aktif untuk lokasi proyek.
 - Form cek syarat KPR yang membuka WhatsApp dengan format pesan otomatis.
 - Galeri gambar proyek asli.
+- Section Progres Pembangunan dengan data terpisah, grid foto, lightbox, dan CTA WhatsApp.
 - Section denah unit dan siteplan yang bisa dibuka dalam tab baru.
 - Brosur digital PDF siap diunduh.
 - SEO dasar: title, meta description, meta keywords, Open Graph, robots, sitemap, dan structured data.
 
+## Update Progres Pembangunan
+
+Data progres berada di:
+
+```text
+src/data/progress.js
+```
+
+Foto progres berada di folder:
+
+```text
+public/progress/
+```
+
+Untuk menambah progres tanggal baru:
+
+1. Buat folder baru:
+
+```text
+public/progress/2026-05-08/
+```
+
+2. Upload foto dengan nama konsisten huruf kecil:
+
+```text
+progress-01.jpg
+progress-02.jpg
+progress-03.jpg
+```
+
+3. Tambahkan data baru di bagian paling atas `window.progressUpdates` pada `src/data/progress.js`:
+
+```js
+{
+  date: "2026-05-08",
+  displayDate: "08 Mei 2026",
+  title: "Progres Pembangunan Tahap Lanjutan",
+  location: "Sukadana, Kabupaten Kayong Utara",
+  status: "Update Lapangan",
+  description: "Dokumentasi lanjutan pekerjaan unit rumah, akses lingkungan, dan perkembangan kawasan Perumahan Duta Kayong Permai.",
+  photos: [
+    {
+      src: "/progress/2026-05-08/progress-01.jpg",
+      caption: "Tampak depan progres pembangunan tahap lanjutan.",
+      alt: "Progres pembangunan rumah subsidi Perumahan Duta Kayong Permai tanggal 08 Mei 2026"
+    }
+  ]
+}
+```
+
+Data progres otomatis diurutkan dari tanggal terbaru ke tanggal lama. Item terbaru akan mendapat label `Terbaru`.
+
+Untuk mengganti caption foto, ubah nilai `caption`. Untuk mengganti alt text SEO/aksesibilitas, ubah nilai `alt`. Untuk mengganti foto, upload file JPG baru dengan nama file yang sama atau ubah nilai `src` sesuai nama file baru.
+
 ## Deploy
 
-Project ini adalah website statis tanpa proses build, sehingga siap di-deploy ke:
+Project ini adalah website statis tanpa dependency frontend. Script `npm run build` hanya menjalankan validasi path, data progres, dan konfigurasi Vercel.
+
+Deploy:
 
 - GitHub Pages: upload repository, lalu aktifkan Pages dari branch utama dan folder root.
 - Netlify: pilih repository, build command dikosongkan, publish directory `.`.
-- Vercel: import repository sebagai static site. Konfigurasi `vercel.json` sudah tersedia.
+- Vercel: import repository sebagai static site dengan Application Preset `Other`, Root Directory `./`, Build Command `npm run build` atau dikosongkan, dan Output Directory `.`. Konfigurasi `vercel.json` sudah tersedia, termasuk rewrite agar URL `/progress/...` membaca file dari `public/progress/...`.
+
+Setelah update foto atau data progres:
+
+1. Commit perubahan ke GitHub.
+2. Push ke branch utama yang terhubung ke Vercel.
+3. Vercel akan melakukan deployment ulang sesuai pengaturan repository.
 
 ## Data Produksi
 

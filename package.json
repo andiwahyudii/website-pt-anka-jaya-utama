@@ -1,0 +1,9 @@
+{
+  "name": "pt-anka-jaya-utama-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website statis resmi PT ANKA JAYA UTAMA untuk pemasaran Perumahan Duta Kayong Permai.",
+  "scripts": {
+    "build": "node scripts/validate-static-site.js"
+  }
+}

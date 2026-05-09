@@ -4,6 +4,10 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/progress/:path*",
+      "destination": "/public/progress/:path*"
+    },
+    {
       "source": "/",
       "destination": "/index.html"
     }

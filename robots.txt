@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ankajayautama.co.id/sitemap.xml
+Sitemap: https://ankajayautama.com/sitemap.xml
