@@ -45,7 +45,8 @@ a {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
 }
 
@@ -177,6 +178,7 @@ section {
   font-size: 14px;
   font-weight: 700;
   border-radius: var(--radius);
+  white-space: nowrap;
 }
 
 .site-nav a:hover,
@@ -435,7 +437,11 @@ h3 {
 .gallery-card,
 .legal-grid article,
 .process-list li,
-.lead-form {
+.lead-form,
+.polri-quick-grid article,
+.polri-card-grid article,
+.polri-checklists article,
+.polri-timeline li {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -768,7 +774,8 @@ h3 {
 
 .calculator input,
 .lead-form input,
-.lead-form select {
+.lead-form select,
+.lead-form textarea {
   width: 100%;
   margin-top: 8px;
   padding: 13px 14px;
@@ -781,9 +788,15 @@ h3 {
 
 .calculator input:focus,
 .lead-form input:focus,
-.lead-form select:focus {
+.lead-form select:focus,
+.lead-form textarea:focus {
   border-color: var(--blue);
   box-shadow: 0 0 0 4px rgba(27, 78, 122, 0.12);
+}
+
+.lead-form textarea {
+  min-height: 118px;
+  resize: vertical;
 }
 
 .range-row label {
@@ -815,6 +828,233 @@ h3 {
   border-radius: var(--radius);
   background: #fff;
   border: 1px solid var(--line);
+}
+
+.polri-section {
+  background:
+    linear-gradient(180deg, #fff 0%, #fff 42%, var(--soft) 42%, var(--soft) 100%);
+}
+
+.polri-heading {
+  max-width: 980px;
+}
+
+.polri-safe-note,
+.polri-disclaimer,
+.polri-small-note {
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  background: var(--soft-warm);
+  color: var(--muted);
+}
+
+.polri-safe-note {
+  padding: 16px 18px;
+}
+
+.polri-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.polri-badges span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 7px 11px;
+  border: 1px solid rgba(216, 161, 61, 0.3);
+  border-radius: 999px;
+  background: var(--soft-warm);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.polri-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.polri-quick-grid article {
+  padding: 18px;
+  border-top: 4px solid var(--green);
+}
+
+.polri-quick-grid strong,
+.polri-quick-grid span {
+  display: block;
+}
+
+.polri-quick-grid strong {
+  color: var(--navy);
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.polri-quick-grid span {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.polri-highlight,
+.polri-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: clamp(22px, 4vw, 44px);
+  align-items: start;
+  margin-top: 26px;
+  padding: clamp(24px, 4vw, 38px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.polri-highlight {
+  background:
+    linear-gradient(135deg, rgba(16, 42, 67, 0.98), rgba(27, 78, 122, 0.94)),
+    var(--navy);
+  color: #fff;
+}
+
+.polri-highlight h3,
+.polri-highlight p,
+.polri-cta h3,
+.polri-cta p {
+  color: #fff;
+}
+
+.polri-highlight .eyebrow {
+  color: #ffd27a;
+}
+
+.polri-highlight p,
+.polri-cta p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.polri-highlight-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.polri-highlight-list li {
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.polri-subsection {
+  margin-top: clamp(34px, 5vw, 58px);
+}
+
+.polri-subsection .section-heading h3,
+.polri-checklists h3,
+.polri-cta h3,
+.polri-highlight h3 {
+  font-size: clamp(24px, 3.5vw, 38px);
+}
+
+.polri-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.polri-card-grid article {
+  padding: 22px;
+  border-top: 4px solid var(--gold);
+}
+
+.polri-card-grid h4,
+.polri-timeline h4 {
+  margin: 0;
+  color: var(--navy);
+  font-family: "Poppins", "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.polri-card-grid p,
+.polri-timeline p,
+.polri-checklists p {
+  color: var(--muted);
+}
+
+.polri-disclaimer,
+.polri-small-note {
+  margin-top: 18px;
+  padding: 14px 16px;
+  font-size: 14px;
+}
+
+.polri-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.polri-timeline li {
+  padding: 20px;
+}
+
+.polri-timeline span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--orange);
+  font-family: "Poppins", "Inter", sans-serif;
+  font-weight: 900;
+}
+
+.polri-timeline p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.polri-checklists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: clamp(34px, 5vw, 58px);
+}
+
+.polri-checklists article {
+  padding: clamp(22px, 4vw, 30px);
+}
+
+.compact-list li {
+  margin-top: 9px;
+  font-size: 14px;
+}
+
+.polri-cta {
+  margin-top: 30px;
+  background:
+    linear-gradient(135deg, rgba(47, 125, 88, 0.96), rgba(16, 42, 67, 0.94)),
+    var(--green);
+  color: #fff;
+}
+
+.polri-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
 }
 
 .form-section {
@@ -1427,6 +1667,11 @@ body.lightbox-open {
   max-width: 380px;
 }
 
+.footer-trust {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.66);
+}
+
 .site-footer li {
   margin-bottom: 9px;
 }
@@ -1488,7 +1733,9 @@ body.lightbox-open {
 
   .feature-grid,
   .gallery-grid,
-  .progress-grid {
+  .progress-grid,
+  .polri-quick-grid,
+  .polri-card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1497,7 +1744,8 @@ body.lightbox-open {
   }
 
   .process-list,
-  .legal-grid {
+  .legal-grid,
+  .polri-timeline {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -1567,16 +1815,21 @@ body.lightbox-open {
   .faq-layout,
   .footer-grid,
   .progress-card-header,
-  .progress-cta {
+  .progress-cta,
+  .polri-highlight,
+  .polri-cta,
+  .polri-checklists {
     grid-template-columns: 1fr;
   }
 
-  .progress-cta {
+  .progress-cta,
+  .polri-cta {
     display: grid;
     align-items: start;
   }
 
-  .progress-cta .section-cta {
+  .progress-cta .section-cta,
+  .polri-cta-actions {
     justify-content: flex-start;
   }
 
@@ -1590,7 +1843,8 @@ body.lightbox-open {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .process-list {
+  .process-list,
+  .polri-timeline {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1643,13 +1897,21 @@ body.lightbox-open {
   .feature-grid,
   .gallery-grid,
   .progress-grid,
+  .polri-quick-grid,
+  .polri-card-grid,
   .project-spec-list,
   .spec-grid,
   .requirement-grid,
   .form-grid,
   .process-list,
-  .legal-grid {
+  .legal-grid,
+  .polri-timeline,
+  .polri-highlight-list {
     grid-template-columns: 1fr;
+  }
+
+  .polri-cta-actions .btn {
+    width: 100%;
   }
 
   .gallery-card img {

@@ -2,7 +2,7 @@
 
 Website statis resmi untuk pemasaran perumahan subsidi/MBR PT ANKA JAYA UTAMA, proyek Duta Kayong Permai Sukadana Type 36.
 
-Website ini fokus untuk closing calon konsumen melalui WhatsApp, form minat, cek syarat KPR subsidi, download brosur, denah unit, siteplan, galeri proyek, dan tombol Google Maps.
+Website ini fokus untuk closing calon konsumen melalui WhatsApp, form minat, cek syarat KPR subsidi, alur khusus Anggota Polri / PNS Polri, download brosur, denah unit, siteplan, galeri proyek, progres pembangunan, dan tombol Google Maps.
 
 Kontak email resmi: `Anka.jayautama@gmail.com`.
 
@@ -59,11 +59,26 @@ Kontak email resmi: `Anka.jayautama@gmail.com`.
 - CTA WhatsApp aktif ke `6281805344429`.
 - Tombol Google Maps aktif untuk lokasi proyek.
 - Form cek syarat KPR yang membuka WhatsApp dengan format pesan otomatis.
+- Section khusus Anggota Polri / PNS Polri berisi ringkasan cepat, alur pendaftaran, checklist dokumen, informasi PUM ASABRI, dan CTA WhatsApp.
 - Galeri gambar proyek asli.
 - Section Progres Pembangunan dengan data terpisah, grid foto, lightbox, dan CTA WhatsApp.
 - Section denah unit dan siteplan yang bisa dibuka dalam tab baru.
 - Brosur digital PDF siap diunduh.
 - SEO dasar: title, meta description, meta keywords, Open Graph, robots, sitemap, dan structured data.
+- Security headers Vercel: HSTS, nosniff, SAMEORIGIN, Referrer-Policy, Permissions-Policy, dan Content-Security-Policy.
+
+## Section Khusus Anggota Polri / PNS Polri
+
+Section `#alur-polri` menjelaskan:
+
+- Booking unit Rp500.000 sebagai tanda minat awal mengikuti prosedur dan ketersediaan unit.
+- Alur konsultasi, pemilihan unit, booking, dokumen KPR subsidi, pengajuan bank, akad, dan serah terima.
+- Simulasi bayar efektif 10-11 bulan/tahun sebagai alat bantu perencanaan cashflow, bukan perubahan terhadap akad bank.
+- Informasi PUM ASABRI sebagai informasi awal sesuai ketentuan ASABRI, satuan kerja, bendahara, mitra bayar, bank, dan instansi terkait.
+- Rekening pribadi pemohon atas nama pemohon dalam administrasi PUM ASABRI.
+- Checklist dokumen KPR subsidi dan dokumen awal konsultasi PUM ASABRI.
+
+Semua CTA WhatsApp tetap memakai nomor resmi `6281805344429` dan pesan otomatis dibentuk aman melalui `encodeURIComponent`.
 
 ## Update Progres Pembangunan
 

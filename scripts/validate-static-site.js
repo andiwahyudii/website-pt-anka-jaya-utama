@@ -60,6 +60,40 @@ if (!html.includes('href="#progres-pembangunan"')) {
   fail('Menu navbar Progres belum mengarah ke #progres-pembangunan');
 }
 
+if (!html.includes('id="alur-polri"')) {
+  fail('Section #alur-polri tidak ditemukan di index.html');
+}
+
+if (!html.includes('href="#alur-polri"')) {
+  fail('Menu navbar Khusus Polri belum mengarah ke #alur-polri');
+}
+
+[
+  "Alur Pendaftaran Khusus Anggota Polri / PNS Polri",
+  "Booking Unit Rp500.000",
+  "Simulasi Bayar Efektif 10-11 Bulan",
+  "Informasi PUM ASABRI untuk Pemohon",
+  "Rekening Pribadi Pemohon",
+  "Checklist Persyaratan KPR Subsidi Anggota Polri / PNS Polri",
+  "Daftar Minat Khusus Polri"
+].forEach((text) => {
+  if (!html.includes(text)) {
+    fail(`Konten Polri belum lengkap: ${text}`);
+  }
+});
+
+[
+  'name="kategoriPemohon"',
+  'name="pumAsabri"',
+  'name="simulasiPolri"',
+  'name="minatUnit"',
+  'name="catatan"'
+].forEach((field) => {
+  if (!html.includes(field)) {
+    fail(`Field form belum ditemukan: ${field}`);
+  }
+});
+
 if (!html.includes("Bisa Survei Lokasi")) {
   fail("Badge progres 'Bisa Survei Lokasi' belum ditemukan");
 }
@@ -82,6 +116,35 @@ if (!Array.isArray(vercelConfig.rewrites)) {
     fail("vercel.json belum mengarahkan /progress/:path* ke /public/progress/:path*");
   }
 }
+
+const headers = Array.isArray(vercelConfig.headers)
+  ? vercelConfig.headers.flatMap((item) => Array.isArray(item.headers) ? item.headers : [])
+  : [];
+const headerKeys = headers.map((header) => header.key);
+[
+  "Strict-Transport-Security",
+  "X-Content-Type-Options",
+  "X-Frame-Options",
+  "Referrer-Policy",
+  "Permissions-Policy",
+  "Content-Security-Policy"
+].forEach((key) => {
+  if (!headerKeys.includes(key)) {
+    fail(`Security header belum ditemukan di vercel.json: ${key}`);
+  }
+});
+
+const csp = headers.find((header) => header.key === "Content-Security-Policy")?.value || "";
+[
+  "default-src 'self'",
+  "upgrade-insecure-requests",
+  "frame-src https://www.google.com https://maps.google.com",
+  "form-action 'self' https://wa.me https://api.whatsapp.com"
+].forEach((rule) => {
+  if (!csp.includes(rule)) {
+    fail(`CSP belum memuat aturan: ${rule}`);
+  }
+});
 
 const references = [];
 
@@ -144,8 +207,35 @@ if (!Array.isArray(progressUpdates) || !progressUpdates.length) {
 
 const searchableSource = [html, css, js, progressDataSource, read("README.md"), read("vercel.json"), read("robots.txt"), read("sitemap.xml")].join("\n");
 
-if (/\/Users\/|file:\/\/|Desktop\/|Downloads\//.test(searchableSource)) {
+if (/\/Users\/|file:\/\/|Desktop\/|Downloads\/|localhost|127\.0\.0\.1/.test(searchableSource)) {
   fail("Source masih mengandung path lokal");
+}
+
+const httpMatches = searchableSource.match(/http:\/\/(?!www\.sitemaps\.org\/schemas\/sitemap\/0\.9)/g);
+if (httpMatches) {
+  fail("Source masih mengandung URL http:// yang dapat memicu mixed content");
+}
+
+const prohibitedClaims = [
+  /pasti\s+lolos/i,
+  /pasti\s+akad/i,
+  /dijamin\s+disetujui/i,
+  /PUM\s+ASABRI\s+pasti\s+cair/i,
+  /tanpa\s+BI\s+Checking/i,
+  /wajib\s+membeli/i
+];
+
+prohibitedClaims.forEach((pattern) => {
+  if (pattern.test(searchableSource)) {
+    fail(`Klaim berisiko ditemukan: ${pattern}`);
+  }
+});
+
+for (const match of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)) {
+  const tag = match[0];
+  if (!/rel="[^"]*noopener[^"]*noreferrer[^"]*"/.test(tag)) {
+    fail(`Link target="_blank" belum memakai rel noopener noreferrer: ${tag}`);
+  }
 }
 
 if (hasError) {

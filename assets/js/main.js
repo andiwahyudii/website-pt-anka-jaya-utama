@@ -16,7 +16,7 @@ function buildWhatsappUrl(message) {
 document.querySelectorAll("[data-wa]").forEach((link) => {
   link.setAttribute("href", buildWhatsappUrl(link.dataset.message));
   link.setAttribute("target", "_blank");
-  link.setAttribute("rel", "noopener");
+  link.setAttribute("rel", "noopener noreferrer");
 });
 
 const year = document.querySelector("#year");
@@ -90,14 +90,19 @@ if (leadForm) {
       "Halo PT ANKA JAYA UTAMA, saya ingin cek syarat KPR subsidi.",
       "",
       `Nama: ${formData.get("nama")}`,
-      `WhatsApp: ${formData.get("whatsapp")}`,
+      `Nomor WA: ${formData.get("whatsapp")}`,
       `Domisili: ${formData.get("domisili")}`,
       `Pekerjaan: ${formData.get("pekerjaan")}`,
+      `Kategori Pemohon: ${formData.get("kategoriPemohon")}`,
       `Penghasilan: ${formData.get("penghasilan")}`,
       `Status menikah: ${formData.get("status")}`,
       `Status rumah: ${formData.get("punyaRumah")}`,
+      `Minat Unit: ${formData.get("minatUnit") || "Belum ditentukan"}`,
+      `Konsultasi PUM ASABRI: ${formData.get("pumAsabri")}`,
+      `Simulasi Bayar 10-11 Bulan/Tahun: ${formData.get("simulasiPolri")}`,
       `Rencana survei: ${formData.get("survei")}`,
       tanggalSurvei ? `Tanggal survei: ${tanggalSurvei}` : "Tanggal survei: belum ditentukan",
+      `Catatan: ${formData.get("catatan") || "Tidak ada"}`,
       "",
       "Mohon dibantu pengecekan awal dan info unit yang tersedia."
     ].join("\n");
@@ -106,7 +111,7 @@ if (leadForm) {
       formStatus.textContent = "Data siap dikirim. WhatsApp akan terbuka di tab baru.";
     }
 
-    window.open(buildWhatsappUrl(message), "_blank", "noopener");
+    window.open(buildWhatsappUrl(message), "_blank", "noopener,noreferrer");
   });
 }
 

@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PT ANKA JAYA UTAMA | Duta Kayong Permai Sukadana Type 36</title>
-    <meta name="description" content="Website resmi PT ANKA JAYA UTAMA untuk pemasaran Perumahan Duta Kayong Permai, rumah subsidi/MBR di Sukadana, Kabupaten Kayong Utara, dilengkapi informasi tipe rumah, lokasi, legalitas, simulasi KPR, dan progres pembangunan.">
-    <meta name="keywords" content="PT ANKA JAYA UTAMA, Rumah Subsidi, Rumah MBR, KPR Subsidi, Type 36, Duta Kayong Permai, Perumahan Sukadana, Developer Rumah Subsidi, Pangkalan Buton, Kabupaten Kayong Utara, progres pembangunan rumah subsidi, perumahan MBR Kayong Utara, rumah subsidi Jalan Poros Sukadana Ketapang">
+    <meta name="description" content="Website resmi PT ANKA JAYA UTAMA untuk pemasaran Perumahan Duta Kayong Permai, rumah subsidi/MBR di Sukadana, Kabupaten Kayong Utara, dilengkapi informasi tipe rumah, lokasi, legalitas, simulasi KPR, progres pembangunan, dan alur pendaftaran khusus Anggota Polri/PNS Polri.">
+    <meta name="keywords" content="PT ANKA JAYA UTAMA, Rumah Subsidi, Rumah MBR, KPR Subsidi, Type 36, Duta Kayong Permai, Perumahan Sukadana, Developer Rumah Subsidi, Pangkalan Buton, Kabupaten Kayong Utara, progres pembangunan rumah subsidi, perumahan MBR Kayong Utara, rumah subsidi Jalan Poros Sukadana Ketapang, rumah subsidi untuk anggota Polri, KPR subsidi anggota Polri, rumah subsidi PNS Polri, PUM ASABRI rumah, PUM ASABRI KPR, skema angsuran Polri">
     <meta name="author" content="PT ANKA JAYA UTAMA">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://ankajayautama.com/">
@@ -64,6 +64,7 @@
           <a href="#denah">Denah</a>
           <a href="#simulasi">Simulasi</a>
           <a href="#syarat-kpr">Syarat KPR</a>
+          <a href="#alur-polri">Khusus Polri</a>
           <a href="#lokasi">Lokasi</a>
           <a href="#progres-pembangunan">Progres</a>
           <a href="#faq">FAQ</a>
@@ -235,7 +236,7 @@
 
       <section class="section section-muted" id="denah">
         <div class="container split split-large">
-          <a class="document-preview" href="public/images/denah-unit-rumah.jpg" target="_blank" rel="noopener" aria-label="Buka denah unit rumah subsidi dalam ukuran besar">
+          <a class="document-preview" href="public/images/denah-unit-rumah.jpg" target="_blank" rel="noopener noreferrer" aria-label="Buka denah unit rumah subsidi dalam ukuran besar">
             <img src="public/images/denah-unit-rumah.jpg" alt="Denah unit rumah subsidi Duta Kayong Permai PT Anka Jaya Utama" width="1409" height="2000" loading="lazy">
           </a>
           <div class="copy-block">
@@ -251,7 +252,7 @@
             </ul>
             <div class="section-cta">
               <a class="btn btn-primary" href="#form-minat">Cek Syarat KPR</a>
-              <a class="btn btn-ghost" href="public/images/denah-unit-rumah.jpg" target="_blank" rel="noopener">Perbesar Denah</a>
+              <a class="btn btn-ghost" href="public/images/denah-unit-rumah.jpg" target="_blank" rel="noopener noreferrer">Perbesar Denah</a>
             </div>
           </div>
         </div>
@@ -361,6 +362,15 @@
                 <input type="text" name="pekerjaan" placeholder="Karyawan, wiraswasta, dll." required>
               </label>
               <label>
+                Kategori pemohon
+                <select name="kategoriPemohon" required>
+                  <option value="">Pilih kategori</option>
+                  <option>Anggota Polri</option>
+                  <option>PNS Polri</option>
+                  <option>Umum / Lainnya</option>
+                </select>
+              </label>
+              <label>
                 Penghasilan per bulan
                 <select name="penghasilan" required>
                   <option value="">Pilih rentang</option>
@@ -390,6 +400,24 @@
                 </select>
               </label>
               <label>
+                Konsultasi PUM ASABRI
+                <select name="pumAsabri" required>
+                  <option value="">Pilih kebutuhan</option>
+                  <option>Ya</option>
+                  <option>Tidak</option>
+                  <option>Belum tahu, ingin dijelaskan</option>
+                </select>
+              </label>
+              <label>
+                Simulasi Bayar 10-11 Bulan/Tahun
+                <select name="simulasiPolri" required>
+                  <option value="">Pilih kebutuhan</option>
+                  <option>Ya</option>
+                  <option>Tidak</option>
+                  <option>Konsultasi dulu</option>
+                </select>
+              </label>
+              <label>
                 Rencana survei lokasi
                 <select name="survei" required>
                   <option value="">Pilih rencana</option>
@@ -400,8 +428,16 @@
                 </select>
               </label>
               <label class="full-field">
+                Minat unit/blok (opsional)
+                <input type="text" name="minatUnit" placeholder="Contoh: Type 36, blok tertentu, atau belum pilih">
+              </label>
+              <label class="full-field">
                 Tanggal survei yang diinginkan (opsional)
                 <input type="date" name="tanggalSurvei">
+              </label>
+              <label class="full-field">
+                Catatan tambahan (opsional)
+                <textarea name="catatan" rows="4" placeholder="Tulis kebutuhan konsultasi, jadwal, atau pertanyaan dokumen."></textarea>
               </label>
             </div>
             <label class="consent">
@@ -411,6 +447,202 @@
             <button class="btn btn-wa form-submit" type="submit">Kirim ke WhatsApp</button>
             <p class="form-status" id="formStatus" aria-live="polite"></p>
           </form>
+        </div>
+      </section>
+
+      <section class="section polri-section" id="alur-polri" aria-labelledby="polri-title">
+        <div class="container">
+          <div class="section-heading polri-heading">
+            <p class="eyebrow">Khusus Anggota Polri / PNS Polri</p>
+            <h2 id="polri-title">Alur Pendaftaran Khusus Anggota Polri / PNS Polri</h2>
+            <p>PT ANKA JAYA UTAMA menyediakan jalur konsultasi dan pendampingan dokumen bagi Anggota Polri / PNS Polri yang berminat memiliki rumah subsidi di Perumahan Duta Kayong Permai, Sukadana, Kabupaten Kayong Utara.</p>
+            <p>Calon pembeli dari lingkungan Polri dapat melakukan konsultasi awal, memilih unit, melakukan booking, melengkapi dokumen, berkonsultasi mengenai PUM ASABRI, dan mengikuti proses pengajuan KPR subsidi sesuai ketentuan bank penyalur serta regulasi program perumahan subsidi yang berlaku.</p>
+            <p class="polri-safe-note">Persetujuan KPR tetap menjadi kewenangan bank penyalur setelah proses verifikasi dokumen, penghasilan, riwayat pembiayaan, dan ketentuan program subsidi. PT ANKA JAYA UTAMA membantu pendampingan administrasi tanpa menjanjikan hasil di luar kewenangan bank.</p>
+            <div class="polri-badges" aria-label="Ringkasan kepercayaan khusus Polri">
+              <span>Khusus Anggota Polri / PNS Polri</span>
+              <span>Booking Unit Rp500.000</span>
+              <span>Pendampingan Dokumen KPR</span>
+              <span>Simulasi Bayar 10-11 Bulan/Tahun</span>
+              <span>PUM ASABRI Sesuai Ketentuan</span>
+              <span>Bisa Survei Lokasi</span>
+            </div>
+          </div>
+
+          <div class="polri-quick-grid" aria-label="Ringkasan cepat khusus Anggota Polri dan PNS Polri">
+            <article>
+              <strong>Booking Unit Rp500.000</strong>
+              <span>Tanda minat awal mengikuti prosedur administrasi dan ketersediaan unit.</span>
+            </article>
+            <article>
+              <strong>Type 36, Luas Tanah 8 x 16</strong>
+              <span>Rumah subsidi dengan 2 kamar, ruang keluarga, ruang tamu, dan teras.</span>
+            </article>
+            <article>
+              <strong>Lokasi Jalan Poros Sukadana-Ketapang</strong>
+              <span>Akses menuju kawasan Duta Kayong Permai di Sukadana, Kayong Utara.</span>
+            </article>
+            <article>
+              <strong>Simulasi Bayar Efektif 10-11 Bulan/Tahun</strong>
+              <span>Alat bantu perencanaan cashflow sebelum booking dan pengajuan KPR.</span>
+            </article>
+            <article>
+              <strong>Konsultasi PUM ASABRI Sesuai Ketentuan</strong>
+              <span>Informasi awal bagi peserta ASABRI yang ingin merencanakan uang muka.</span>
+            </article>
+            <article>
+              <strong>Daftar Minat &amp; Survei Lokasi via WhatsApp</strong>
+              <span>Tim marketing membantu cek unit, dokumen, dan jadwal kunjungan.</span>
+            </article>
+          </div>
+
+          <div class="polri-highlight">
+            <div>
+              <p class="eyebrow">Jalur informasi khusus</p>
+              <h3>Jalur Informasi Khusus Anggota Polri / PNS Polri</h3>
+              <p>Anggota Polri / PNS Polri dapat berkonsultasi lebih awal untuk mengetahui unit tersedia, estimasi cicilan, dokumen KPR subsidi, skema perencanaan bayar, dan informasi PUM ASABRI sesuai ketentuan yang berlaku.</p>
+              <p class="polri-small-note">Ketersediaan unit, hasil verifikasi KPR, skema pembayaran, dan fasilitas PUM ASABRI tetap mengikuti ketentuan bank penyalur, ASABRI, dan instansi terkait.</p>
+            </div>
+            <ul class="polri-highlight-list">
+              <li>Booking unit Rp500.000.</li>
+              <li>Pilihan blok mengikuti ketersediaan terbaru.</li>
+              <li>Rumah Type 36 dengan luas tanah 8 x 16.</li>
+              <li>Lokasi Jalan Poros Sukadana-Ketapang.</li>
+              <li>Pendampingan dokumen KPR subsidi.</li>
+              <li>Simulasi bayar efektif 10-11 bulan dalam 1 tahun.</li>
+              <li>Konsultasi informasi PUM ASABRI.</li>
+              <li>Survei lokasi dapat dijadwalkan.</li>
+            </ul>
+          </div>
+
+          <div class="polri-subsection">
+            <div class="section-heading">
+              <p class="eyebrow">Simulasi cashflow</p>
+              <h3>Simulasi Bayar Efektif 10-11 Bulan dalam 1 Tahun</h3>
+              <p>Untuk membantu perencanaan keuangan Anggota Polri / PNS Polri, tim PT ANKA JAYA UTAMA dapat membantu membuat simulasi kemampuan bayar dengan pola pembayaran efektif 10-11 bulan dalam 1 tahun. Simulasi ini mempertimbangkan penghasilan, tunjangan, kewajiban berjalan, kesiapan administrasi, serta ketentuan bank penyalur.</p>
+            </div>
+            <div class="polri-card-grid">
+              <article>
+                <h4>Simulasi Kemampuan Bayar</h4>
+                <p>Calon pembeli dapat berkonsultasi untuk menghitung estimasi kemampuan bayar berdasarkan penghasilan bulanan, tunjangan, dan kewajiban berjalan.</p>
+              </article>
+              <article>
+                <h4>Pola Perencanaan Cashflow</h4>
+                <p>Skema 10-11 bulan/tahun digunakan sebagai pendekatan perencanaan cashflow tahunan agar calon pembeli memahami kesiapan pembayaran sebelum proses KPR.</p>
+              </article>
+              <article>
+                <h4>Tetap Mengikuti Akad Bank</h4>
+                <p>Jika KPR disetujui, kewajiban pembayaran tetap mengacu pada perjanjian kredit, jadwal angsuran, sistem auto-debit, dan kebijakan bank penyalur.</p>
+              </article>
+              <article>
+                <h4>Konsultasi Sebelum Booking</h4>
+                <p>Calon pembeli disarankan berkonsultasi terlebih dahulu sebelum booking agar memahami estimasi cicilan, kebutuhan dokumen, dan kesiapan administrasi.</p>
+              </article>
+            </div>
+            <p class="polri-disclaimer">Simulasi bayar 10-11 bulan dalam 1 tahun merupakan alat bantu perencanaan kemampuan bayar, bukan perubahan sepihak terhadap kewajiban angsuran bank. Ketentuan pembayaran tetap mengikuti akad kredit dan kebijakan bank penyalur.</p>
+          </div>
+
+          <div class="polri-subsection">
+            <div class="section-heading">
+              <p class="eyebrow">Informasi PUM ASABRI</p>
+              <h3>Informasi PUM ASABRI untuk Pemohon</h3>
+              <p>Bagi Anggota Polri / PNS Polri yang merupakan peserta ASABRI, informasi Pinjaman Uang Muka atau PUM ASABRI dapat dikonsultasikan sebagai bagian dari perencanaan pembelian rumah, sepanjang memenuhi ketentuan peserta, dokumen, dan mekanisme yang berlaku.</p>
+            </div>
+            <div class="polri-card-grid">
+              <article>
+                <h4>Diajukan oleh Pemohon</h4>
+                <p>PUM ASABRI diajukan oleh peserta/pemohon sesuai syarat kepesertaan dan dokumen yang berlaku.</p>
+              </article>
+              <article>
+                <h4>Rekening Pribadi Pemohon</h4>
+                <p>Dalam proses administrasi, pemohon menyiapkan buku tabungan atau rekening pribadi atas nama pemohon. Mekanisme pencairan dan penggunaan dana tetap mengikuti ketentuan ASABRI, mitra bayar, bank penyalur, dan instansi terkait.</p>
+              </article>
+              <article>
+                <h4>Mendukung Perencanaan Uang Muka</h4>
+                <p>Dana PUM ASABRI dapat menjadi bagian dari perencanaan pembiayaan uang muka atau kebutuhan administrasi sesuai ketentuan program dan hasil verifikasi.</p>
+              </article>
+              <article>
+                <h4>Tetap Melalui Verifikasi</h4>
+                <p>Persetujuan PUM ASABRI tidak otomatis. Proses tetap mengikuti persyaratan peserta, status kepesertaan, dokumen, serta kebijakan ASABRI/instansi terkait.</p>
+              </article>
+            </div>
+            <p class="polri-disclaimer">Informasi PUM ASABRI pada website bersifat informasi awal. Calon pemohon tetap perlu memastikan ketentuan terbaru melalui ASABRI, satuan kerja, bendahara, bank penyalur, atau pihak terkait.</p>
+          </div>
+
+          <div class="polri-subsection">
+            <div class="section-heading">
+              <p class="eyebrow">Tahapan pendaftaran</p>
+              <h3>Tahapan Pendaftaran</h3>
+              <p>Alur berikut membantu calon pembeli dari lingkungan Polri memahami langkah konsultasi, booking, pengajuan KPR subsidi, dan pendampingan administrasi secara lebih terarah.</p>
+            </div>
+            <ol class="polri-timeline">
+              <li><span>01</span><h4>Konsultasi Awal</h4><p>Calon pembeli menghubungi tim marketing PT ANKA JAYA UTAMA untuk mendapatkan informasi unit, lokasi, harga subsidi, simulasi cicilan, skema pembayaran, dan syarat awal KPR.</p></li>
+              <li><span>02</span><h4>Cek Status Pemohon</h4><p>Tim membantu mencatat kategori calon pembeli, apakah Anggota Polri, PNS Polri, atau umum, termasuk status menikah, domisili, penghasilan, dan rencana pengajuan KPR.</p></li>
+              <li><span>03</span><h4>Pilih Blok dan Unit</h4><p>Calon pembeli memilih blok/unit yang masih tersedia berdasarkan siteplan dan informasi terbaru dari tim marketing.</p></li>
+              <li><span>04</span><h4>Booking Unit Rp500.000</h4><p>Calon pembeli melakukan booking unit sebesar Rp500.000 sebagai tanda minat awal terhadap unit yang dipilih, mengikuti prosedur administrasi perusahaan dan ketersediaan unit.</p></li>
+              <li><span>05</span><h4>Lengkapi Dokumen KPR</h4><p>Calon pembeli menyiapkan dokumen pribadi, keluarga, kepegawaian, slip/daftar gaji, mutasi rekening, dan dokumen tambahan sesuai permintaan bank.</p></li>
+              <li><span>06</span><h4>Konsultasi PUM ASABRI</h4><p>Jika pemohon adalah peserta ASABRI dan ingin berkonsultasi mengenai PUM ASABRI, tim memberikan arahan dokumen awal dan mengingatkan bahwa mekanisme tetap mengikuti ketentuan ASABRI dan instansi terkait.</p></li>
+              <li><span>07</span><h4>Cek Awal Kelengkapan</h4><p>Tim membantu melakukan pengecekan awal dokumen sebelum berkas diajukan kepada bank penyalur.</p></li>
+              <li><span>08</span><h4>Pengajuan KPR Subsidi</h4><p>Berkas diajukan kepada bank penyalur untuk proses verifikasi, analisa, dan keputusan pembiayaan.</p></li>
+              <li><span>09</span><h4>Akad Kredit</h4><p>Jika disetujui bank dan administrasi terpenuhi, calon pembeli melanjutkan proses akad kredit sesuai jadwal dan ketentuan bank/notaris.</p></li>
+              <li><span>10</span><h4>Serah Terima Unit</h4><p>Serah terima unit dilakukan setelah proses administrasi, akad, dan ketentuan proyek terpenuhi sesuai prosedur yang berlaku.</p></li>
+            </ol>
+          </div>
+
+          <div class="polri-checklists">
+            <article>
+              <h3>Checklist Persyaratan KPR Subsidi Anggota Polri / PNS Polri</h3>
+              <p>Siapkan dokumen berikut untuk mempercepat proses pengecekan awal dan pengajuan KPR subsidi.</p>
+              <ul class="check-list compact-list">
+                <li>KTP Pemohon.</li>
+                <li>KTP Suami/Istri, jika sudah menikah.</li>
+                <li>Kartu Keluarga.</li>
+                <li>Buku Nikah, jika sudah menikah.</li>
+                <li>Bukti Booking Unit Rp500.000.</li>
+                <li>Kartu Anggota Polri / PNS Polri.</li>
+                <li>Kartu Peserta ASABRI, jika diperlukan.</li>
+                <li>SK Pengangkatan Pertama.</li>
+                <li>SK Pangkat Terakhir.</li>
+                <li>Slip Gaji / Daftar Gaji Terakhir.</li>
+                <li>Rekening Koran / Mutasi Rekening 3 Bulan Terakhir.</li>
+                <li>Buku Tabungan atau rekening pribadi pemohon.</li>
+                <li>NPWP, jika diminta bank.</li>
+                <li>Pas foto, jika diminta bank.</li>
+                <li>Surat keterangan atau dokumen tambahan sesuai permintaan bank penyalur.</li>
+                <li>Dokumen tambahan terkait PUM ASABRI jika pemohon berkonsultasi/mengajukan sesuai ketentuan.</li>
+              </ul>
+              <p class="polri-small-note">Bank penyalur, ASABRI, atau instansi terkait dapat meminta dokumen tambahan sesuai hasil verifikasi dan kebijakan yang berlaku.</p>
+            </article>
+            <article>
+              <h3>Dokumen Awal untuk Konsultasi PUM ASABRI</h3>
+              <p>Checklist ini membantu pemohon menyiapkan bahan konsultasi awal sebelum proses diarahkan sesuai ketentuan pihak terkait.</p>
+              <ul class="check-list compact-list">
+                <li>Kartu Peserta ASABRI.</li>
+                <li>Kartu Anggota Polri / PNS Polri.</li>
+                <li>KTP Pemohon.</li>
+                <li>Kartu Keluarga.</li>
+                <li>SK Pengangkatan Pertama.</li>
+                <li>SK Pangkat Terakhir.</li>
+                <li>Daftar Gaji / Slip Gaji Terakhir.</li>
+                <li>Buku Tabungan atau rekening pribadi atas nama pemohon.</li>
+                <li>NPWP atau dokumen pajak jika diminta.</li>
+                <li>Surat keterangan dari pengembang bila dibutuhkan dalam proses administrasi.</li>
+                <li>Dokumen tambahan sesuai ketentuan ASABRI, satuan kerja, bendahara, mitra bayar, atau bank terkait.</li>
+              </ul>
+              <p class="polri-small-note">Checklist ini bersifat panduan awal. Ketentuan final tetap mengikuti ASABRI, satuan kerja, bendahara, mitra bayar, dan bank penyalur.</p>
+            </article>
+          </div>
+
+          <div class="polri-cta" aria-label="CTA WhatsApp khusus Polri">
+            <div>
+              <h3>Anggota Polri / PNS Polri ingin cek syarat dan pilih unit?</h3>
+              <p>Hubungi tim PT ANKA JAYA UTAMA untuk konsultasi awal, pengecekan dokumen, informasi unit tersedia, simulasi skema bayar, konsultasi PUM ASABRI, dan jadwal survei lokasi.</p>
+            </div>
+            <div class="polri-cta-actions">
+              <a class="btn btn-wa" href="https://wa.me/6281805344429" data-wa data-message="Halo PT ANKA JAYA UTAMA, saya Anggota Polri/PNS Polri ingin mendaftar minat rumah subsidi Perumahan Duta Kayong Permai. Mohon informasi unit tersedia, syarat dokumen, booking unit Rp500.000, dan jadwal survei lokasi.">Daftar Minat Khusus Polri</a>
+              <a class="btn btn-light" href="https://wa.me/6281805344429" data-wa data-message="Halo PT ANKA JAYA UTAMA, saya ingin konsultasi informasi PUM ASABRI untuk pembelian rumah subsidi Perumahan Duta Kayong Permai. Mohon penjelasan syarat awal, dokumen, dan mekanisme sesuai ketentuan yang berlaku.">Konsultasi PUM ASABRI</a>
+              <a class="btn btn-ghost" href="https://wa.me/6281805344429" data-wa data-message="Halo PT ANKA JAYA UTAMA, saya ingin dibuatkan simulasi kemampuan bayar 10-11 bulan dalam 1 tahun untuk rumah subsidi Perumahan Duta Kayong Permai.">Simulasi Bayar 10-11 Bulan/Tahun</a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -437,7 +669,7 @@
             </div>
             <div class="section-cta">
               <a class="btn btn-primary" href="https://wa.me/6281805344429" data-wa data-message="Halo PT ANKA JAYA UTAMA, saya ingin menjadwalkan survei lokasi rumah subsidi.">Jadwalkan Survei Lokasi</a>
-              <a class="btn btn-ghost" href="https://maps.app.goo.gl/EUct8fyfFbh8zw2x9?g_st=iw" target="_blank" rel="noopener">Buka Lokasi di Google Maps</a>
+              <a class="btn btn-ghost" href="https://maps.app.goo.gl/EUct8fyfFbh8zw2x9?g_st=iw" target="_blank" rel="noopener noreferrer">Buka Lokasi di Google Maps</a>
             </div>
           </div>
           <div class="map-panel">
@@ -453,12 +685,12 @@
             <h2>Rencana kawasan Duta Kayong Permai dengan blok unit dan area fasum/fasos.</h2>
             <p>Siteplan asli proyek ditampilkan penuh agar calon pembeli dapat melihat posisi blok A, B, C, D, akses jalan, serta area fasilitas umum/fasilitas sosial. Klik gambar untuk membuka ukuran besar.</p>
           </div>
-          <a class="siteplan-preview" href="public/images/siteplan-perumahan.png" target="_blank" rel="noopener" aria-label="Buka siteplan perumahan PT Anka Jaya Utama dalam ukuran besar">
+          <a class="siteplan-preview" href="public/images/siteplan-perumahan.png" target="_blank" rel="noopener noreferrer" aria-label="Buka siteplan perumahan PT Anka Jaya Utama dalam ukuran besar">
             <img src="public/images/siteplan-perumahan.png" alt="Siteplan perumahan PT Anka Jaya Utama Duta Kayong Permai" width="1122" height="1402" loading="lazy">
           </a>
           <div class="section-cta">
             <a class="btn btn-primary" href="https://wa.me/6281805344429" data-wa data-message="Halo PT ANKA JAYA UTAMA, saya ingin tanya posisi unit di siteplan Duta Kayong Permai.">Tanya Posisi Unit</a>
-            <a class="btn btn-ghost" href="public/images/siteplan-perumahan.png" target="_blank" rel="noopener">Perbesar Siteplan</a>
+            <a class="btn btn-ghost" href="public/images/siteplan-perumahan.png" target="_blank" rel="noopener noreferrer">Perbesar Siteplan</a>
           </div>
         </div>
       </section>
@@ -640,6 +872,34 @@
               <summary>Apakah unit selalu tersedia?</summary>
               <p>Ketersediaan unit dapat berubah karena booking dan proses verifikasi. Silakan hubungi tim untuk cek stok terbaru sebelum survei.</p>
             </details>
+            <details>
+              <summary>Apakah Anggota Polri / PNS Polri bisa mengajukan KPR subsidi?</summary>
+              <p>Bisa mengajukan sepanjang memenuhi syarat program rumah subsidi, ketentuan bank penyalur, dan hasil verifikasi dokumen.</p>
+            </details>
+            <details>
+              <summary>Apakah booking Rp500.000 langsung menjamin KPR disetujui?</summary>
+              <p>Tidak. Booking merupakan tanda minat awal terhadap unit yang tersedia. Persetujuan KPR tetap mengikuti verifikasi dan keputusan bank penyalur.</p>
+            </details>
+            <details>
+              <summary>Apa saja dokumen utama untuk Anggota Polri / PNS Polri?</summary>
+              <p>Dokumen utama meliputi KTP, Kartu Keluarga, Buku Nikah jika sudah menikah, Kartu Anggota Polri/PNS Polri, SK Pengangkatan Pertama, SK Pangkat Terakhir, slip/daftar gaji terakhir, mutasi rekening 3 bulan terakhir, serta dokumen tambahan sesuai permintaan bank.</p>
+            </details>
+            <details>
+              <summary>Apakah bisa konsultasi PUM ASABRI?</summary>
+              <p>Bisa. Tim dapat membantu memberikan informasi awal dokumen dan alur konsultasi PUM ASABRI. Persetujuan dan mekanisme pencairan tetap mengikuti ketentuan ASABRI, satuan kerja, bendahara, mitra bayar, dan bank terkait.</p>
+            </details>
+            <details>
+              <summary>Apakah dana PUM ASABRI masuk ke rekening pribadi anggota?</summary>
+              <p>Dalam administrasi PUM ASABRI, pemohon menyiapkan buku tabungan atau rekening pribadi atas nama pemohon. Mekanisme pencairan dan penggunaan dana tetap mengikuti ketentuan ASABRI, mitra bayar, bank penyalur, dan instansi terkait.</p>
+            </details>
+            <details>
+              <summary>Apa maksud skema bayar 10-11 bulan dalam 1 tahun?</summary>
+              <p>Skema tersebut merupakan simulasi perencanaan kemampuan bayar tahunan untuk membantu calon pembeli menghitung kesiapan finansial. Kewajiban angsuran tetap mengikuti akad kredit dan ketentuan bank penyalur.</p>
+            </details>
+            <details>
+              <summary>Apakah bisa survei lokasi sebelum booking?</summary>
+              <p>Calon pembeli dapat menjadwalkan survei lokasi bersama tim marketing untuk melihat lingkungan, akses, siteplan, dan informasi unit tersedia.</p>
+            </details>
           </div>
         </div>
       </section>
@@ -669,6 +929,8 @@
             </span>
           </a>
           <p>Hunian Type 36 yang nyaman, terjangkau, dan proses KPR dibantu sesuai ketentuan bank penyalur.</p>
+          <p class="footer-trust">Website resmi PT ANKA JAYA UTAMA. Informasi unit, progres pembangunan, konsultasi dokumen, dan pendaftaran minat hanya melalui kanal resmi yang tercantum pada website ini.</p>
+          <p class="footer-trust">Waspada penipuan. Pastikan komunikasi dilakukan melalui nomor WhatsApp resmi PT ANKA JAYA UTAMA yang tercantum di website.</p>
         </div>
         <div>
           <h2>Kontak</h2>
@@ -683,6 +945,7 @@
           <ul>
             <li><a href="#tipe-rumah">Tipe Rumah</a></li>
             <li><a href="#simulasi">Simulasi KPR</a></li>
+            <li><a href="#alur-polri">Khusus Polri</a></li>
             <li><a href="#form-minat">Form Minat</a></li>
             <li><a href="#lokasi">Google Maps</a></li>
           </ul>
