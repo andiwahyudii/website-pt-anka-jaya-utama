@@ -25,7 +25,8 @@ function isExternalOrAnchor(value) {
     value.startsWith("http://") ||
     value.startsWith("mailto:") ||
     value.startsWith("tel:") ||
-    value.startsWith("data:")
+    value.startsWith("data:") ||
+    value.startsWith("/_vercel/")
   );
 }
 
