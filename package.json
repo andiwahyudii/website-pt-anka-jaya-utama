@@ -5,5 +5,8 @@
   "description": "Website statis resmi PT ANKA JAYA UTAMA untuk pemasaran Perumahan Duta Kayong Permai.",
   "scripts": {
     "build": "node scripts/validate-static-site.js"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
   }
 }
